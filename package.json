@@ -24,11 +24,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "env-cmd -f .env.production react-scripts build",
+    "build_1": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev": "netlify dev",
-    "netlify-build": "netlify build"
+    "build": "netlify build"
   },
   "eslintConfig": {
     "extends": [
