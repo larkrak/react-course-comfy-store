@@ -3,8 +3,12 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import heroBcg from "../assets/hero-bcg.jpeg";
 import heroBcg2 from "../assets/hero-bcg-2.jpeg";
+import axios from "axios";
+import { useCartContext } from "../context/cart_context";
 
 const Hero = () => {
+  const { cart, total_amount, shipping_fee, clearCart } = useCartContext();
+
   return (
     <Wrapper className="section-center">
       <article className="content">

@@ -48,11 +48,11 @@ const CheckoutForm = () => {
   const createPaymentIntent = async () => {
     try {
       const { data } = await axios.post(
-        "/.netlify/functions/create-payment-intent",
-        JSON.stringify({ cart, shipping_fee, total_amount })
+        "http://localhost:8080/create-payment",
+        { cart, shipping_fee, total_amount }
       );
 
-      setClientSecret(data.clientSecret);
+      setClientSecret(data.body.clientSecret);
     } catch (error) {
       console.log(error);
     }
@@ -63,7 +63,6 @@ const CheckoutForm = () => {
   }, []);
 
   const handleChange = async (event) => {
-    console.log(event);
     setDisabled(event.empty);
     setError(event.error ? event.error.message : "  ");
   };
